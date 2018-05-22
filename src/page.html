@@ -16,28 +16,35 @@
 		<!-- BEGIN content -->
 		<div class="form_wrap">
 			<h2 class="form_wrap-title">Sign Up</h2>
-				<form class="sign" id="form_sign" name="form" method="post" action="js/app.js">
+				<form class="sign" id="form_sign" name="form">
 
-					<input id="sign_firstname" class="sign-input" type="text" name="firstname" placeholder="Fist Name*"/>
-					<input id="sign_lastname" class="sign-input" type="text" name="lastname" placeholder="Last Name*"/>
+					<input id="sign_firstname" class="sign-input" type="text" name="name" placeholder="Name*"/>
+					<input id="sign_lastname" class="sign-input" type="text" name="secondname" placeholder="Second Name*"/>
 					<input id="sign_email" class="sign-input" type="email" name="email" placeholder="Email*"/>
 
-					<select id="sign_male" class='sign-select required' name="male_select">
+					<select id="sign_gender" class='sign-select' name="gender">
+						<option selected="selected" disabled="disabled"></option>
 						<option value='male'>Male</option>
 						<option value="female">Female</option>
 					</select>
 
-					<input id="sign_password" class="sign-input" type="password" name="password" placeholder="Password*"/><br>
+					<input id="sign_pass" class="sign-input" type="password" name="pass" placeholder="Password*"/>
+					<input id="sign_pass-conf" class="sign-input" type="password" name="passconf" placeholder="Confirm password*"/><br>
+
 					<div class="sign_check-wrap">
 						<input id="sign_check" class="sign-check" type="checkbox" name="agree">
 						<label for="sign_check" class='sign-check-cond'>Condiitons of Agreement*</label>
 					</div>
+
 					<button id="sign_submit" class="sign-submit" type="submit">Send</button>
 				</form>
 		</div>
+		<!-- BEGIN serv-resp -->
+		<div class="serv-resp"></div>
+		<!-- END serv-resp -->
 		<!-- END content -->
 		<!-- BEGIN scripts -->
-		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/app.min.js"></script>
 		<!-- END scripts -->
 	</body>
 </html>

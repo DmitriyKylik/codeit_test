@@ -5,7 +5,6 @@ gulp.task('watch',
     ['copy:watch',
     
     'sprite:svg:watch',
-    'svgo:watch',
     'list-pages:watch',
     'js:watch',
     'sass:watch'

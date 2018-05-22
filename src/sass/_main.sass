@@ -1,64 +1,202 @@
-.form_wrap
-	width: 40%
+// ----------- COMPANIES BEGIN ------------------
+.companies
+	+flex
+	max-width: 1600px
 	min-width: 320px
-	margin: 50px auto 0
-	padding: 20px
-	background: mix(white, $blue , 35%)
-	color: #fff
-	border-radius: 5px
-	&-title
-		text-align: center
-		margin-bottom: 20px
-		cursor: default
-	.sign
+	min-height: 100vh
+	flex-basis: 100%
+	padding: 50px
+	margin: 0 auto
+	justify-content: space-around
+	align-self: center
+	align-content: space-around
+	flex-wrap: wrap
+
+.company
+	flex-basis: 45%
+	box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.1)
+	min-height: 300px
+	margin: 20px
+	position: relative
+	border-radius: 10px
+	overflow: hidden
+
+	&_top-line
 		width: 100%
-		font-family: $rale
-		&-input
-			width: 100%
-			height: 40px
-			margin: 15px 0
-			padding-left: 15px
-			border-radius: 5px
-			color: $dgray
-			+placeholder
-				color: $dgray
-		&-select
-			display: block
-			width: 15%
-			height: 40px
-			margin: 15px 0
-			padding-left: 10px
-			border: none
-			border-radius: 5px
-			font-family: inherit
-			color: $dgray
-			+r(1300)
-				width: 30%
-		&_check-wrap
-			position: relative
-		&-check
-			display: block
-			margin: 10px 0
-			vertical-align: middle
-			&-cond
-				position: absolute
-				top: -5px
-				left: 30px
-		&-cond
-			margin-left: 5px
-		&-submit
-			display: block
-			width: 120px
-			height: 40px
-			margin: 15px auto
-			background: #fff
-			font-size: 18px
-			color: $dgray
-			border-radius: 5px
+		padding: 10px
+		position: relative
+		background: $blue
+		color: $lgray
+
+	&_title
+		display: inline-block
+
+	&_list
+		width: 95%
+		height: 250px
+		max-height: 250px
+		margin: 10px auto
+		border-radius: 5px
+		overflow-y: auto
+
+		&-item
+			width: 96%
+			margin: 15px
+			padding: 10px
+			font-family: $rale
+			border-radius: 3px
 			&:hover
-				background: $lgray
-				color: #fff
+				background: $blue
+				color: $lgray
+				cursor: pointer
+
+// -----------TOTAL COMPANIES BEGIN ------------------
+
+.total-comp_counter
+	display: block
+	width: 150px
+	height: 150px
+	position: relative
+	top: 40%
+	left: 50%
+	transform: translate(-50%, -50%)
+	border: 5px solid $lgray
+	border-radius: 50%
+	text-align: center
+	line-height: 147px
+	font-weight: bold
+	font-size: 26px
+	color: $gray
+
+// -----------TOTAL COMPANIES END ------------------
+
+// ----------- COMPANIES PARTNERS BEGIN --------------
+
+.partners
+	max-width: 1550px
+	flex-basis: 95%
+	&_list-wrap
+		max-width: 98%
+		position: relative
+		background: $blue
+		height: 320px
+		margin: 10px auto
+		overflow-x: auto
+
+		+clr
+	&_list
+		+flex
+		width: 100%
+		max-width: 200%
+		height: 100%
+		align-items: center
+		position: absolute
+		top: 0
+		left: 0
+
+	&_item
+		position: relative
+		min-width: 100px
+		height: 100%
+		border: 1px solid #fff
+		white-space: nowrap
+		text-align: center
+
+	&_name
+		display: inline
+		position: absolute
+		bottom: 35px
+		left: 10px
+		color: $lgray
+		transform: rotate(-90deg)
+		font-size: 22px
+
+	&_count
+		position: absolute
+		top: 10%
+		left: 50%
+		color: $lgray
+		transform: translate(-50%, -10%)
+		font-size: 26px
+
+.sort
+	min-width: 20%
+	position: absolute
+	top: 17px
+	right: 15px
+	+clr
+
+	&_arrow
+		display: inline-block
+		width: 16px
+		height: 16px
+		+cover
+		&:hover
+			cursor: pointer
+	&_title
+		float: left
+		vertical-align: top
+
+	&_type
+		float: right
+		margin-left: 10px
+
+	&_order
+		display: inline-block
+
+		& span
+			vertical-align: top
+
+// ----------- COMPANIES PARTNERS END --------------
+
+// -----------  COMPANY LOCATION BEGIN ------------
+
+.back-arrow
+	width: 24px
+	height: 24px
+	float: right
+	margin: 10px
+	+cover
 
 
+// -----------  COMPANY LOCATION END ------------
 
+// -----------  COMPANY NEWS BEGIN ------------
 
+.news
+	&_slider
+		width: 95%
+		margin: 15px auto
+
+	&_item
+		padding: 10px
+
+	&_photo
+		width: 100px
+		height: 100px
+		float: left
+		margin-right: 10px
+		+contain
+
+	&_textual
+		max-height: 150px
+		overflow-y: auto
+
+	&_meta
+		display: inline-block
+		max-width: 25%
+		clear: both
+		margin-top: 10px
+
+		& span
+			width: 45%
+
+		&-title
+			font-weight: bold
+
+	.slick-dots li button:before  // Slick dots styled
+		font-size: 24px
+
+// -----------  COMPANY NEWS END ------------
+
+// ----------- COMPANIES END ------------------

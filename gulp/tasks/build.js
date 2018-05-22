@@ -6,7 +6,6 @@ function build(cb) {
     runSequence(
         'clean',
         'sprite:svg',
-        'svgo',
         'sass',
         'js',
         'copy',

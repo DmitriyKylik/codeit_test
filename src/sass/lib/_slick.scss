@@ -4,7 +4,6 @@
     position: relative;
     display: block;
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -45,6 +44,8 @@
     left: 0;
     top: 0;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 
     &:before,
     &:after {
@@ -93,4 +94,7 @@
         height: auto;
         border: 1px solid transparent;
     }
+}
+.slick-arrow.slick-hidden {
+    display: none;
 }
