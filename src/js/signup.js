@@ -72,10 +72,10 @@ $(function(){
 					servResp.css({color: 'green'});
 				}
 				servResp.html(data.message).fadeIn();
-
-				// if(data.status === 'OK'){
-				// 	window.location.replace('companies.html');
-				// }
+				console.log(data.status);
+				if(data.status === 'OK'){
+					window.location.replace('companies.html');
+				}
 			});
 			return false
 		}

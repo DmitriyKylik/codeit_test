@@ -1,20 +1,13 @@
 var gulp        = require('gulp');
-var consolidate = require('gulp-consolidate');
 var config      = require('../../config');
-require('require-yaml');
 
-gulp.task('list-pages', function() {
-	delete require.cache[require.resolve('../../../' + config.src.pagelist)]
-    var pages = require('../../../' + config.src.pagelist);
+gulp.task('pages', function() {
+
     return gulp
-        .src(__dirname + '/index.html')
-        .pipe(consolidate('lodash', {
-            pages: pages
-        }))
+        .src(config.src.root+'/*.html')
         .pipe(gulp.dest(config.dest.html));
 });
 
-gulp.task('list-pages:watch', function() {
-    gulp.watch(config.src.root+'/*', ['list-pages']);
+gulp.task('pages:watch', function() {
+    gulp.watch(config.src.root+'/*', ['pages']);
 });
-

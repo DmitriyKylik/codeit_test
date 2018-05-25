@@ -5,7 +5,6 @@
 // =include lib/jquery.canvasjs.min.js
 // =include  signup.js
 // =include  companies.js
-// =include  slick_conf.js
 // =include  news.js
 
 

@@ -1,21 +1,21 @@
 $(function(){
 
-	$.get('http://codeit.pro/codeitCandidates/serverFrontendTest/company/getList', 	function(data, status){
-		getCompData(data);
+	$.get('http://codeit.pro/codeitCandidates/serverFrontendTest/company/getList', function(data, status){
+		$('.preload').show(function(){
+			$(this).prepend('<div class="preload-stat" style="background-image: url(img/preload.gif)"></div>');
+		});
+		setTimeout(function(){getCompData(data)}, 2000);
+		setTimeout(function(){$('.preload').hide()}, 3000);
+		;
 	}, 'json');
 
 	function getCompData(data){
 
-	var compList = $('.company_list');
-	var compCounter = $('.total-comp_counter');
+	var $compList = $('.company_list');
+	var $compCounter = $('.total-comp_counter');
 	var compData = data;
 	var compDataArr = [];
-	var locNameArr = [];
-	var countries = [];
 	var countryComp = [];
-	var partNameArr = [];
-	var partValArr = [];
-
 
 
 /*-----------------TOTAL-LIST COMPANY START--------------------*/
@@ -23,8 +23,7 @@ $(function(){
 	function CompListRender(){
 	for(var i = 0; i < compData.list.length; i++){
 		compDataArr[i] = compData.list[i]; 
-		locNameArr[i] = compData.list[i].location;
-		compList.append("<li class='company_list-item' data-index='"+ i +"'>" + compDataArr[i].name + "</li>");
+		$compList.append("<li class='company_list-item' data-index='"+ i +"'>" + compDataArr[i].name + "</li>");
 	}
 	}
 
@@ -35,7 +34,7 @@ $(function(){
 	// Counting compaies number
 	function countTotalComp(compCounter){
 
-		$(compCounter).each(function () {
+		$compCounter.each(function () {
 			$(this).prop('Counter',0).animate({
 				Counter: $(this).text()
 			}, {
@@ -48,8 +47,8 @@ $(function(){
 		});
 	}
 	CompListRender();
-	rendTotalComp(compCounter, compDataArr.length);
-	countTotalComp(compCounter);
+	rendTotalComp($compCounter, compDataArr.length);
+	countTotalComp($compCounter);
 	getCountryComp(compDataArr);
 
 /*---------------------------TOTAL-LIST COMPANY END--------------------*/
@@ -67,7 +66,6 @@ $(function(){
 	var $sortNameDesc = $('.sort_name-desc');
 	$(partList).attr('data-default', 'true');		// Default type of sort
 	$(partList).attr('data-status', 'percdesc');
-	console.log($(partList).attr('data-status', 'percdesc'));
 
 	function sortNameDesc(partArr) { 
 		return partArr.sort(function(a, b){
@@ -189,8 +187,6 @@ $(function(){
 			$(this).attr('data-status', 'disable');
 		}
 	});
-
-	console.log(countryComp);
 
 	function LocListRender(index){
 		$locList.empty();

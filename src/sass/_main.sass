@@ -25,6 +25,20 @@
 	+r(920)
 		flex-basis: 100%
 		min-height: 400px
+	.preload
+		display: block
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		z-index: 10000
+		background: #fff
+		&-stat
+			width: 100px
+			height: 100px
+			+vcenter
+			+contain
 
 	&_top-line
 		width: 100%
@@ -207,6 +221,9 @@
 	&_item
 		height: 100%
 		padding: 10px
+
+	&_title
+		text-align: center
 
 	&_photo
 		width: 100px

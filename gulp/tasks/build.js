@@ -5,11 +5,10 @@ var config      = require('../config');
 function build(cb) {
     runSequence(
         'clean',
-        'sprite:svg',
         'sass',
         'js',
+        'pages',
         'copy',
-        'list-pages',
         cb
     );
 }
