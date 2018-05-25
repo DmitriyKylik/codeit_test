@@ -4,11 +4,6 @@ $(function(){
 	var serverResp;
 	var serverUrl = 'http://codeit.pro/codeitCandidates/serverFrontendTest/user/registration';
 	var servResp = $('.serv-resp');
-	
-	$('.sort_name-asc').on('click', function(){
-		console.log('Ho-HO-ho');
-		alert('Ho-HO-ho');
-	});
 
 	formSign.validate({
 		rules: {
@@ -71,7 +66,6 @@ $(function(){
 			var formVal = $(form).serialize();
 
 			$.post(serverUrl, formVal, function(data, status){
-				console.log(data.status);
 				if(data.status === ('Form Error' || 'Error')){
 					servResp.css({color: 'red'});
 				}else{

@@ -2,4 +2,5 @@ ProjectTitle: codeit-test
 
 PageList:
 - file: page.html
+- file: companies.html
   ready: 50

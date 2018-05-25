@@ -14,7 +14,7 @@ gulp.task('js', function () {
         .on('error', function(){notify("Javascript include error");})
         // .pipe(babel())
         .pipe(concat('app.min.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest(config.dest.js+'/'))
         .pipe(reload({stream: true}));
 });

@@ -11,6 +11,8 @@
 	align-self: center
 	align-content: space-around
 	flex-wrap: wrap
+	+r(760)
+		padding: 50px 0 50px
 
 .company
 	flex-basis: 45%
@@ -20,6 +22,9 @@
 	position: relative
 	border-radius: 10px
 	overflow: hidden
+	+r(920)
+		flex-basis: 100%
+		min-height: 400px
 
 	&_top-line
 		width: 100%
@@ -27,18 +32,22 @@
 		position: relative
 		background: $blue
 		color: $lgray
+		+r(760)
+			text-align: center
 
 	&_title
 		display: inline-block
 
 	&_list
 		width: 95%
-		height: 250px
+		min-height: 250px
 		max-height: 250px
 		margin: 10px auto
 		border-radius: 5px
 		overflow-y: auto
-
+		overflow-x: hidden
+		+r(920)
+			max-height: 350px
 		&-item
 			width: 96%
 			margin: 15px
@@ -56,8 +65,8 @@
 	display: block
 	width: 150px
 	height: 150px
-	position: relative
-	top: 40%
+	position: absolute
+	top: 58%
 	left: 50%
 	transform: translate(-50%, -50%)
 	border: 5px solid $lgray
@@ -75,20 +84,22 @@
 .partners
 	max-width: 1550px
 	flex-basis: 95%
+	display: none
+
 	&_list-wrap
 		max-width: 98%
 		position: relative
-		background: $blue
-		height: 320px
+		min-height: 400px
 		margin: 10px auto
 		overflow-x: auto
-
 		+clr
+
 	&_list
 		+flex
 		width: 100%
 		max-width: 200%
 		height: 100%
+		padding-bottom: 20px
 		align-items: center
 		position: absolute
 		top: 0
@@ -97,19 +108,20 @@
 	&_item
 		position: relative
 		min-width: 100px
+		max-width: 100px
 		height: 100%
-		border: 1px solid #fff
+		border-right: 1px solid $dgray
 		white-space: nowrap
 		text-align: center
 
 	&_name
-		display: inline
-		position: absolute
-		bottom: 35px
-		left: 10px
+		position: relative
+		top: 50%
+		left: 50%
 		color: $lgray
-		transform: rotate(-90deg)
+		transform: rotate(-90deg) translate(-120%, -150%)
 		font-size: 22px
+		text-align: right
 
 	&_count
 		position: absolute
@@ -125,21 +137,35 @@
 	top: 17px
 	right: 15px
 	+clr
+	+r(760)
+		display: block
+		width: auto
+		position: static
+		margin-top: 10px
+		+r(390)
+			font-size: 14px
 
 	&_arrow
 		display: inline-block
 		width: 16px
 		height: 16px
 		+cover
+		+r(390)
+			width: 12px
+			height: 12px
 		&:hover
 			cursor: pointer
 	&_title
 		float: left
 		vertical-align: top
+		+r(760)
+			float: left
 
 	&_type
 		float: right
 		margin-left: 10px
+		+r(760)
+			float: left
 
 	&_order
 		display: inline-block
@@ -155,9 +181,17 @@
 	width: 24px
 	height: 24px
 	float: right
-	margin: 10px
+	margin: 5px
 	+cover
+	+r(450)
+		float: none
+		margin: 10px auto 0
+	&:hover
+		cursor: pointer
 
+.loc_list
+	display: none
+	max-height: 320px
 
 // -----------  COMPANY LOCATION END ------------
 
@@ -166,9 +200,12 @@
 .news
 	&_slider
 		width: 95%
+		height: 70%
 		margin: 15px auto
-
+		+r(920)
+			min-height: 350px
 	&_item
+		height: 100%
 		padding: 10px
 
 	&_photo
@@ -181,15 +218,21 @@
 	&_textual
 		max-height: 150px
 		overflow-y: auto
+		+r(920)
+			max-height: 300px
 
 	&_meta
 		display: inline-block
-		max-width: 25%
+		min-width: 30%
 		clear: both
 		margin-top: 10px
+		font-size: 0
+		+r(460)
+			min-width: 40%
 
 		& span
-			width: 45%
+			font-size: 14px
+			margin: 5px
 
 		&-title
 			font-weight: bold

@@ -5,8 +5,16 @@ $(function(){
 		rows: 0,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		dots: true
-		// appendArrows: $('.products_slider-nav')
+		dots: true,
+		responsive: [
+		{
+			breakpoint: 920,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+			}
+		}
+		]
 	});
 
 });
